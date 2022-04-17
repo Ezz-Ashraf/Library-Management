@@ -71,12 +71,12 @@ public class home extends javax.swing.JFrame {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, -1, -1));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/libraryManagement/view/Icons/issue.png"))); // NOI18N
-        jButton4.setText("jButton4");
+        jButton4.setText("Issue Book");
         jButton4.setPreferredSize(new java.awt.Dimension(159, 59));
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, -1, -1));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/libraryManagement/view/Icons/return-book-1-560407.png"))); // NOI18N
-        jButton5.setText("jButton5");
+        jButton5.setText("Return Book");
         jButton5.setPreferredSize(new java.awt.Dimension(159, 59));
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, -1, -1));
 

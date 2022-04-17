@@ -1,0 +1,13 @@
+create database libraryManagement
+
+use libraryManagement;
+
+create table Student 
+(
+    StudentID int Primary key,
+    email varchar(255) unique,
+    StudentName varchar(255),
+    StudentDepartment varchar(255)
+)
+
+select * from Student

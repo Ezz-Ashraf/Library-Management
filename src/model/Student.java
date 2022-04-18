@@ -14,12 +14,12 @@ import utility.database;
  *
  * @author omark
  */
-public class student {
+public class Student {
     private String name;
     private int id;
     private String email;
     private String department;
-    public student(){
+    public Student(){
     //    this.department=department;
     //      this.name=name;
     //    this.id=id;
@@ -48,7 +48,7 @@ public class student {
         try {
             database.addModel(query);
         } catch (SQLException ex) {
-            Logger.getLogger(student.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

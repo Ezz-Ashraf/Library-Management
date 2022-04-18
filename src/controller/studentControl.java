@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
-import model.student;
+import model.Student;
 
 /**
  *
@@ -13,7 +13,7 @@ public class studentControl {
 
     public static boolean addStudent(int id,String name,String email,String department)
     {
-    student addedStudent=new student();
+    Student addedStudent=new Student();
     addedStudent.addName(name);
     addedStudent.addId(id);
     addedStudent.addEmail(email);

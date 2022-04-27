@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/marwan/Desktop/softwareProject/Library-Management/src/utility/database.java</file>
-            <file>file:/C:/Users/marwan/Desktop/softwareProject/Library-Management/src/libraryManagement/view/newStudent.java</file>
-            <file>file:/C:/Users/marwan/Desktop/softwareProject/Library-Management/src/model/Student.java</file>
-            <file>file:/C:/Users/marwan/Desktop/softwareProject/Library-Management/src/controller/studentControl.java</file>
-            <file>file:/C:/Users/marwan/Desktop/softwareProject/Library-Management/src/libraryManagement/view/login.java</file>
-            <file>file:/C:/Users/marwan/Desktop/softwareProject/Library-Management/src/libraryManagement/view/home.java</file>
+            <file>file:/C:/Users/omark/Desktop/software/Library-Management-main/src/libraryManagement/view/newStudent.java</file>
+            <file>file:/C:/Users/omark/Desktop/software/Library-Management-main/src/libraryManagement/view/home.java</file>
+            <file>file:/C:/Users/omark/Desktop/software/Library-Management-main/src/libraryManagement/view/newBook.java</file>
+            <file>file:/C:/Users/omark/Desktop/software/Library-Management-main/src/libraryManagement/view/Icons/123456.png</file>
         </group>
     </open-files>
 </project-private>

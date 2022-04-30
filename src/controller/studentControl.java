@@ -11,13 +11,9 @@ import model.Student;
  */
 public class studentControl {
 
-    public static boolean addStudent(int id,String name,String email,String department)
+    public static boolean addStudent(int id,String name,String email,String department , String phoneNumber , String address)
     {
-    Student addedStudent=new Student();
-    addedStudent.addName(name);
-    addedStudent.addId(id);
-    addedStudent.addEmail(email);
-    addedStudent.addDepartment(department);
+    Student addedStudent=new Student.studentBuilder(name,id,email,department).addAddress(address).addPhoneNumber(phoneNumber).build();
     addedStudent.saveData();
     return true;
     }

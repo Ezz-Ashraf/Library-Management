@@ -19,34 +19,83 @@ public class Student {
     private int id;
     private String email;
     private String department;
-    public Student(){
-    //    this.department=department;
-    //      this.name=name;
-    //    this.id=id;
-    //    this.email=email;
+    private String phoneNumber;
+    private String address;
+    private Student(studentBuilder builder){
+        this.department=builder.department;
+        this.name=builder.name;
+        this.id=builder.id;
+        this.email=builder.email;
+        this.phoneNumber=builder.phoneNumber;
+        this.address=builder.address;
     }
-    public void addName(String name)
+    public static class studentBuilder
     {
-    this.name=name;
-    }
-    public void addId(int id)
+    private String name;
+    private int id;
+    private String email;
+    private String department;
+    private String phoneNumber;
+    private String address;
+    public studentBuilder(String name,int id , String email ,String department)
     {
-    this.id=id;
+        this.name=name;
+        this.id=id;
+        this.email=email;
+        this.department=department;
     }
-    public void addEmail(String email)
+
+
+    public studentBuilder addPhoneNumber(String phoneNumber)
     {
-    this.email=email;
+    this.phoneNumber=phoneNumber;
+    return this;
     }
-    public void addDepartment(String department)
+    public studentBuilder addAddress(String address)
     {
-    this.department=department;
+    this.address=address;
+    return this;
     }
+    public Student build() {
+    return new Student(this);
+    }
+    }
+    public String getName()
+    {
+    return this.name;
+    }
+    public int getId()
+    {
+    return this.id;
+    }
+    public String getEmail()
+    {
+    return this.email;
+    }
+    public String getDeparment()
+    {
+    return this.department;
+    }
+    public String getPhoneNumber()
+    {
+    return this.phoneNumber;
+    }
+    public String getAddress()
+    {
+    return this.address;
+    }
+
     public void saveData()
     {
-     String query=" insert into Student (StudentName, StudentId, email, StudentDepartment) "
-              + "values('"+name+"', '"+id+"', '"+email+"', '"+department+"')";
-        try {
-            database.addModel(query);
+     /*String query=" insert into Student (StudentName, StudentID, email, StudentDepartment,StudentPhone ,StudentAddress) "
+              + "values('"+"hgjg"+"', '"+4444+"', '"+"yjyjhgk"+"', '"+"CS"+"' , '"+"010"+" , "+"Helwan"+"')";
+     */
+      String  query = "INSERT INTO Student" +
+            " (StudentName,StudentID,email,StudentDepartment,StudentPhone,StudentAddress)" +
+            " VALUES (?,?,?,?,?,?)";
+      String args[]={getName(),getId()+"",getEmail(),getDeparment(),getPhoneNumber(),getAddress()};
+     try {
+            database.addModel(query,args);
         } catch (SQLException ex) {
             Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
         }

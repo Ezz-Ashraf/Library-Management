@@ -22,13 +22,18 @@ import java.util.logging.Logger;
 public class database {
     static String url =  "jdbc:sqlserver://DESKTOP-3S7Q7L2\\SQLEXPRESS:1433;databaseName=libraryManagement;integratedSecurity=true;" +
      "encrypt=true;trustServerCertificate=true"; ;
-  public static String addModel(String addQuery) throws SQLException {
+  public static String addModel(String addQuery , String ...args) throws SQLException {
             try {
     Connection c      = DriverManager.getConnection(url);
+    PreparedStatement stmt = c.prepareStatement(addQuery);
     Statement ss = c.createStatement();
      Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
     String query = addQuery;
-    ss.execute(query);
+                for (int i = 0; i < args.length; i++) {
+                   stmt.setString(i+1, args[i]);
+                }
+                stmt.execute();
+//ss.execute(query);
      
         return   "Model added succesfully";
         } catch (ClassNotFoundException ex) {

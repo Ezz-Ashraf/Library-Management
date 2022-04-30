@@ -137,7 +137,9 @@ public class newStudent extends javax.swing.JFrame {
     String name = jTextField2.getText();
     String email = jTextField3.getText();
     String department = jComboBox1.getSelectedItem().toString();
-    studentControl.addStudent(id, name, email, department);
+    String phoneNumber = jTextField4.getText();
+    String address = jTextField5.getText();
+    studentControl.addStudent(id, name, email, department , phoneNumber , address);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

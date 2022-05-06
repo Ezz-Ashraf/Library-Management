@@ -15,12 +15,11 @@ public class issueControl {
     {
            
        Issue addedIssue  = new Issue();
-       addedBook.addBookId(bookId);
-       addedBook.addBookName(bookName);
-       addedBook.addPublisher(publisher);
-       addedBook.addPublishYear(publishYear);
-       addedBook.addBookPrice(bookPrice);
-       addedBook.saveData();
+       addedIssue.addBookId(bookId);
+       addedIssue.addStudentId(studentId);
+       addedIssue.addIssueDate(issueDate);
+       addedIssue.addDueDate(dueDate);
+       addedIssue.saveData();
     return true;
     }
 }

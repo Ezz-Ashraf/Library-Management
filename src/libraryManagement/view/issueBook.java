@@ -1,6 +1,7 @@
 
 package libraryManagement.view;
 
+import controller.issueControl;
 import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.Set;
@@ -119,17 +120,12 @@ public class issueBook extends javax.swing.JFrame {
     private void issueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_issueButtonActionPerformed
         // TODO add your handling code here:
         SimpleDateFormat dFormat = new SimpleDateFormat("dd-MM-yyyy");
-        String bookID = jTextField1.getText();
-        String StudentID=jTextField2.getText();
+        int bookId = Integer.parseInt(jTextField1.getText());
+        int StudentId=Integer.parseInt(jTextField2.getText());
         String issueDate=dFormat.format(jDateChooser1.getDate());
         String dueDate=dFormat.format(jDateChooser2.getDate());
-        try {
+        issueControl.addIssue( bookId, StudentId, issueDate, dueDate);
 
-            
-        } catch (Exception e) {
-
-            
-        }
     }//GEN-LAST:event_issueButtonActionPerformed
 
     /**

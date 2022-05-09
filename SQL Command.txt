@@ -17,3 +17,11 @@ create table Book (
     publishYear varchar(255),
 	price float
 )
+
+CREATE TABLE Users (
+    userID int IDENTITY(1,1) PRIMARY KEY,
+    userName varchar(255),
+    Upassword varchar(255),
+    email varchar(255) unique,
+	userRole varchar(255) 
+);

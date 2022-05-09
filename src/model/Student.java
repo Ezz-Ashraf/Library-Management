@@ -14,7 +14,7 @@ import utility.database;
  *
  * @author omark
  */
-public class Student {
+public class Student implements dataProcessing {
     private String name;
     private int id;
     private String email;
@@ -28,6 +28,10 @@ public class Student {
         this.email=builder.email;
         this.phoneNumber=builder.phoneNumber;
         this.address=builder.address;
+    }
+
+    @Override
+    public void retrieveData() {
     }
     public static class studentBuilder
     {
@@ -85,6 +89,7 @@ public class Student {
     return this.address;
     }
 
+    @Override
     public void saveData()
     {
      /*String query=" insert into Student (StudentName, StudentID, email, StudentDepartment,StudentPhone ,StudentAddress) "

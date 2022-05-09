@@ -2,19 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/ezz/Library/Library-Management/src/model/Book.java</file>
-            <file>file:/C:/Users/ezz/Library/Library-Management/src/model/Student.java</file>
-            <file>file:/C:/Users/ezz/Library/Library-Management/src/controller/studentControl.java</file>
-            <file>file:/C:/Users/ezz/Library/Library-Management/src/libraryManagement/view/login.java</file>
-            <file>file:/C:/Users/ezz/Library/Library-Management/src/libraryManagement/view/newBook.java</file>
-            <file>file:/C:/Users/ezz/Library/Library-Management/src/utility/database.java</file>
-            <file>file:/C:/Users/ezz/Library/Library-Management/src/controller/issueControl.java</file>
-            <file>file:/C:/Users/ezz/Library/Library-Management/src/libraryManagement/view/home.java</file>
-            <file>file:/C:/Users/ezz/Library/Library-Management/src/model/Issue.java</file>
-            <file>file:/C:/Users/ezz/Library/Library-Management/src/libraryManagement/view/newStudent.java</file>
-            <file>file:/C:/Users/ezz/Library/Library-Management/src/libraryManagement/view/issueBook.java</file>
-            <file>file:/C:/Users/ezz/Library/Library-Management/src/controller/bookControl.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

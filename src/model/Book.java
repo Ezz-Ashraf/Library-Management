@@ -13,7 +13,7 @@ import utility.database;
  *
  * @author ezz
  */
-public class Book {
+public class Book implements dataProcessing {
     private int bookId;
     private String bookName;
     private String publisher;
@@ -60,6 +60,7 @@ public class Book {
     {
     return this.bookPrice;
     }
+    @Override
     public void saveData()
     {
      /*String query=" insert into Student (StudentName, StudentID, email, StudentDepartment,StudentPhone ,StudentAddress) "
@@ -74,5 +75,10 @@ public class Book {
         } catch (SQLException ex) {
             Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @Override
+    public void retrieveData() {
+       
     }
 }

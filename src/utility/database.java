@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  * @author ezz
  */
 public class database {
-    static String url =  "jdbc:sqlserver://DESKTOP-3S7Q7L2\\SQLEXPRESS:1433;databaseName=libraryManagement;integratedSecurity=true;" +
+    static String url =  "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=libraryManagement;integratedSecurity=true;" +
      "encrypt=true;trustServerCertificate=true"; ;
   public static String addModel(String addQuery , String ...args) throws SQLException {
             try {

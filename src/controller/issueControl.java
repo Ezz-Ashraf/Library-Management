@@ -19,6 +19,7 @@ public class issueControl {
        addedIssue.addStudentId(studentId);
        addedIssue.addIssueDate(issueDate);
        addedIssue.addDueDate(dueDate);
+       //addedIssue.addStatus("issued");
        addedIssue.saveData();
     return true;
     }

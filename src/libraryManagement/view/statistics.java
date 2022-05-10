@@ -108,12 +108,7 @@ public class statistics extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
-        try{
-            //TODO Datebase connection to retrieve the tables
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Connection ERROR!");
-        }
+      
     }//GEN-LAST:event_formComponentShown
 
     private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed

@@ -19,8 +19,19 @@ public class issueControl {
        addedIssue.addStudentId(studentId);
        addedIssue.addIssueDate(issueDate);
        addedIssue.addDueDate(dueDate);
-       //addedIssue.addStatus("issued");
+       addedIssue.addStatus("issued");
        addedIssue.saveData();
+    return true;
+    }
+        public static boolean returnBook(int bookId, int studentId , String returnDate )
+    {
+           
+       Issue addedIssue  = new Issue();
+       addedIssue.addBookId(bookId);
+       addedIssue.addStudentId(studentId);
+       addedIssue.addReturnDate(returnDate);
+       addedIssue.addStatus("Returned");
+       addedIssue.updateData();
     return true;
     }
 }

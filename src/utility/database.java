@@ -58,6 +58,20 @@ public class database {
             Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
             }
   }
+    public static String updateModel(String updateQuery ) throws SQLException {
+            try {
+    Connection c      = DriverManager.getConnection(url);
+    Statement ss = c.createStatement();
+    ss.execute(updateQuery);
+     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//ss.execute(query);
+     
+        return   "Model Updated succesfully";
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+            return "Error in Updating the Model";
+        }
+  }
 }
 
 

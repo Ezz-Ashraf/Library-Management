@@ -5,6 +5,7 @@
  */
 package libraryManagement.view;
 
+import controller.issueControl;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,11 +33,9 @@ public class returnBook extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         bookIdField = new javax.swing.JTextField();
         studentIdField = new javax.swing.JTextField();
-        IssueDateField = new javax.swing.JTextField();
         DueDateField = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
         returnButton = new javax.swing.JButton();
@@ -59,13 +58,9 @@ public class returnBook extends javax.swing.JFrame {
         jLabel2.setText("Student ID");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Issue Date");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, -1, -1));
-
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Due Date");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
 
         bookIdField.setBackground(new java.awt.Color(204, 255, 204));
         bookIdField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -85,18 +80,14 @@ public class returnBook extends javax.swing.JFrame {
         });
         getContentPane().add(studentIdField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 239, -1));
 
-        IssueDateField.setBackground(new java.awt.Color(204, 255, 204));
-        IssueDateField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        IssueDateField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IssueDateFieldActionPerformed(evt);
-            }
-        });
-        getContentPane().add(IssueDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 239, -1));
-
         DueDateField.setBackground(new java.awt.Color(204, 255, 204));
         DueDateField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(DueDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 239, -1));
+        DueDateField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DueDateFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(DueDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 239, -1));
 
         searchButton.setBackground(new java.awt.Color(255, 255, 204));
         searchButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -112,6 +103,11 @@ public class returnBook extends javax.swing.JFrame {
         returnButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         returnButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/libraryManagement/view/Icons/return book png.png"))); // NOI18N
         returnButton.setText("Return");
+        returnButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(returnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 119, -1));
 
         closeButton.setBackground(new java.awt.Color(204, 255, 204));
@@ -133,15 +129,11 @@ public class returnBook extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void studentIdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentIdFieldActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_studentIdFieldActionPerformed
 
-    private void IssueDateFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IssueDateFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IssueDateFieldActionPerformed
-
     private void bookIdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookIdFieldActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_bookIdFieldActionPerformed
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
@@ -149,19 +141,24 @@ public class returnBook extends javax.swing.JFrame {
         String bookID = bookIdField.getText();
         String studentID = studentIdField.getText();
 
-        try {
-            //TODO The Database connection here
-            
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Connection ERROR");
-            //setVisible(false);
-            //new returnBook().setVisible(true);
-        }
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
         setVisible(false);
     }//GEN-LAST:event_closeButtonActionPerformed
+
+    private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
+
+       int bookId = Integer.parseInt(bookIdField.getText());   
+       int studentId=Integer.parseInt(studentIdField.getText());
+       String returnDate=DueDateField.getText();
+       issueControl.returnBook(bookId, studentId, returnDate);
+       
+    }//GEN-LAST:event_returnButtonActionPerformed
+
+    private void DueDateFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DueDateFieldActionPerformed
+
+    }//GEN-LAST:event_DueDateFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,12 +197,10 @@ public class returnBook extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DueDateField;
-    private javax.swing.JTextField IssueDateField;
     private javax.swing.JTextField bookIdField;
     private javax.swing.JButton closeButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;

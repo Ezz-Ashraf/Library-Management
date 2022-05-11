@@ -8,13 +8,15 @@ package model;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import libraryManagement.view.home;
+import libraryManagement.view.statistics;
 import utility.database;
 
 /**
  *
  * @author omark
  */
-public class Student implements dataProcessing {
+public class Student extends User implements dataProcessing {
     private String name;
     private int id;
     private String email;
@@ -29,7 +31,9 @@ public class Student implements dataProcessing {
         this.phoneNumber=builder.phoneNumber;
         this.address=builder.address;
     }
-
+    public Student()
+    {
+    }
     @Override
     public void retrieveData() {
     }
@@ -104,5 +108,11 @@ public class Student implements dataProcessing {
         } catch (SQLException ex) {
             Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    @Override
+    public void startPage()
+    {
+    new statistics().setVisible(true);
     }
 }

@@ -125,8 +125,8 @@ public class login extends javax.swing.JFrame {
     boolean check = auth.checkLogin(username, password);
       System.out.println(check);
     if(check) {
-      setVisible(false);
-    new home().setVisible(true);
+     setVisible(false);
+   // new home().setVisible(true);
     }
     else 
     {

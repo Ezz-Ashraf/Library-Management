@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Student;
 
 
 /**
@@ -20,7 +21,7 @@ import java.util.logging.Logger;
  * @author ezz
  */
 public class database {
-    static String url =  "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=libraryManagement;integratedSecurity=true;" +
+    static String url =  "jdbc:sqlserver://DESKTOP-3S7Q7L2\\SQLEXPRESS:1433;databaseName=libraryManagement;integratedSecurity=true;" +
      "encrypt=true;trustServerCertificate=true"; ;
   public static String addModel(String addQuery , String ...args) throws SQLException {
             try {
@@ -42,20 +43,21 @@ public class database {
         }
   }
   
-    public static void getModel(String getModel) throws SQLException {
+    public static String getModel(String getQuery  ,String columnWanted) throws SQLException {
         try {
             // TODO code application logic here
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             Connection c      = DriverManager.getConnection(url);
             Statement ss = c.createStatement();
-            String query = "SELECT * FROM [Sales].[dbo].[Orders] ";
+            String query =getQuery;
             ResultSet r = ss.executeQuery(query);
-            while(r.next()) {
-         System.out.println(r.getString(1) + "---" + r.getString(2) + "---" + r.getString(3) +"----" + r.getString(4) + "----" +r.getString(5));
-            }
+            r.next(); 
+        return     r.getString(columnWanted) ;
+            
             } 
         catch (ClassNotFoundException ex) {
             Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+            return "Nothing Found";
             }
   }
     public static String updateModel(String updateQuery ) throws SQLException {
@@ -71,7 +73,17 @@ public class database {
             Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
             return "Error in Updating the Model";
         }
+    }
+        public static String getRole(String username , String password) {
+              String  query = "SELECT userRole FROM Users where userName = '"+username+"' and Upassword ='"+ password+"'";
+     try {
+         return getModel(query,"userRole");
+        } catch (SQLException ex) {
+            Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+            return "error";
+        }
+        }
   }
-}
 
 
+    

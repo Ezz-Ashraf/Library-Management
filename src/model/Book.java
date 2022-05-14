@@ -79,8 +79,21 @@ public class Book implements dataProcessing {
     }
 
     @Override
-    public ArrayList<String> retrieveData(String ... arr) {
-        ArrayList <String> gotData=new ArrayList();
-       return gotData;
+   public ArrayList<String> retrieveData(String... condition) {
+ ArrayList <String> studentData=new ArrayList();
+  try {
+            int idIndex=0;
+            String query="select * from Book where BookID ="+Integer.parseInt(condition[idIndex]);
+            studentData=database.getModel(query);
+            return studentData ;
+        } catch (SQLException ex) {
+            studentData.add("not found");
+            return studentData;
+        }
+        
+    }
+   public ArrayList<String[]> getBookTable(){
+        ArrayList<String[]> issueData = database.getTableInfo("select * from Book");
+        return issueData;
     }
 }

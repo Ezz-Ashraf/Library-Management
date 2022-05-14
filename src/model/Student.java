@@ -9,8 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import libraryManagement.view.home;
-import libraryManagement.view.statistics;
+import libraryManagement.view.adminHome;
 import libraryManagement.view.studentHome;
 import utility.database;
 
@@ -37,9 +36,18 @@ public class Student extends User implements dataProcessing {
     {
     }
         @Override
-    public ArrayList<String> retrieveData(String... arr) {
- ArrayList <String> gotData=new ArrayList();
-       return gotData;
+    public ArrayList<String> retrieveData(String... condition) {
+ ArrayList <String> studentData=new ArrayList();
+  try {
+            int idIndex=0;
+            String query="select * from Student where StudentID ="+Integer.parseInt(condition[idIndex]);
+            studentData=database.getModel(query);
+            return studentData ;
+        } catch (SQLException ex) {
+            studentData.add("not found");
+            return studentData;
+        }
+        
     }
     public static class studentBuilder
     {
@@ -119,4 +127,5 @@ public class Student extends User implements dataProcessing {
     {
     new studentHome().setVisible(true);
     }
+    
 }

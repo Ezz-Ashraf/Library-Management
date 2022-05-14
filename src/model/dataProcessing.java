@@ -13,5 +13,5 @@ import java.util.ArrayList;
  */
 public interface dataProcessing {
       public void saveData();
-      public ArrayList<String> retrieveData(String ...arr);
+      public ArrayList<String> retrieveData(String ...condition);
 }

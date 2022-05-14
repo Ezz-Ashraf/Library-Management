@@ -17,5 +17,14 @@ public class studentControl {
     addedStudent.saveData();
     return true;
     }
-    
+    public static boolean studentIdExist(String id){
+        Student checkId=new Student();
+        int indexOfIdColumn=0;
+        String studentId=(checkId.retrieveData(id)).get(indexOfIdColumn);
+        System.out.println(studentId);
+        return (studentId.equals(id));
+    }
+   /* public static boolean searchStudent(int studentId){
+        
+    }*/
 }

@@ -37,7 +37,6 @@ public class returnBook extends javax.swing.JFrame {
         bookIdField = new javax.swing.JTextField();
         studentIdField = new javax.swing.JTextField();
         DueDateField = new javax.swing.JTextField();
-        searchButton = new javax.swing.JButton();
         returnButton = new javax.swing.JButton();
         closeButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -59,7 +58,7 @@ public class returnBook extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("Due Date");
+        jLabel4.setText("Date");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
 
         bookIdField.setBackground(new java.awt.Color(204, 255, 204));
@@ -88,16 +87,6 @@ public class returnBook extends javax.swing.JFrame {
             }
         });
         getContentPane().add(DueDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 239, -1));
-
-        searchButton.setBackground(new java.awt.Color(255, 255, 204));
-        searchButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        searchButton.setText("Search");
-        searchButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, -1, -1));
 
         returnButton.setBackground(new java.awt.Color(255, 255, 204));
         returnButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -136,13 +125,6 @@ public class returnBook extends javax.swing.JFrame {
       
     }//GEN-LAST:event_bookIdFieldActionPerformed
 
-    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-
-        String bookID = bookIdField.getText();
-        String studentID = studentIdField.getText();
-
-    }//GEN-LAST:event_searchButtonActionPerformed
-
     private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
         setVisible(false);
     }//GEN-LAST:event_closeButtonActionPerformed
@@ -152,7 +134,14 @@ public class returnBook extends javax.swing.JFrame {
        int bookId = Integer.parseInt(bookIdField.getText());   
        int studentId=Integer.parseInt(studentIdField.getText());
        String returnDate=DueDateField.getText();
-       issueControl.returnBook(bookId, studentId, returnDate);
+       String checkBookId=String.valueOf(bookId);
+       if(issueControl.isissued(checkBookId)){
+            JOptionPane.showMessageDialog(null, "Book Hasbeen Returned");
+           issueControl.returnBook(bookId, studentId, returnDate);
+       }
+       else{
+           JOptionPane.showMessageDialog(null, "Failed to return the book");
+       }
        
     }//GEN-LAST:event_returnButtonActionPerformed
 
@@ -205,7 +194,6 @@ public class returnBook extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JButton returnButton;
-    private javax.swing.JButton searchButton;
     private javax.swing.JTextField studentIdField;
     // End of variables declaration//GEN-END:variables
 }

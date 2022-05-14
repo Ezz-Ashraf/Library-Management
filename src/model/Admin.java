@@ -5,7 +5,7 @@
 package model;
 
 import java.util.ArrayList;
-import libraryManagement.view.home;
+import libraryManagement.view.adminHome;
 import libraryManagement.view.login;
 
 /**
@@ -19,8 +19,9 @@ public class Admin extends User {
     public void startPage()
     {
       
-    new home().setVisible(true);
+    new adminHome().setVisible(true);
     }
+
 
  
 

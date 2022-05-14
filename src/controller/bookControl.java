@@ -5,6 +5,7 @@
 package controller;
 
 import model.Book;
+import java.util.*;
 
 /**
  *
@@ -23,4 +24,16 @@ public class bookControl {
        addedBook.saveData();
     return true;
     }
+      public static boolean bookExist(String id){
+        Book checkId=new Book();
+        int indexOfIdColumn=0;
+        String BookId=(checkId.retrieveData(id)).get(indexOfIdColumn);
+     
+        return (BookId.equals(id));
+    }
+      public static ArrayList<String[]> showAvailableBooksTable(){
+            Book data=new Book();
+            ArrayList<String[]> bookstable=data.getBookTable();
+            return bookstable;
+        }
 }

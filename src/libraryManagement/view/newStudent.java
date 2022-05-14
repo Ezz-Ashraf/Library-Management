@@ -6,6 +6,7 @@
 package libraryManagement.view;
 
 import controller.studentControl;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -137,11 +138,28 @@ public class newStudent extends javax.swing.JFrame {
     String name = jTextField2.getText();
     String email = jTextField3.getText();
     String department = jComboBox1.getSelectedItem().toString();
-    String phoneNumber = jTextField4.getText();
-    String address = jTextField5.getText();
+    String phoneNumber = null;
+    String address=null;
+    if(!isEmptyString(jTextField5.getText())){
+        address=jTextField5.getText();
+    }
+  if(!isEmptyString(jTextField4.getText())){
+      phoneNumber=jTextField4.getText();
+  }
+    String checkId=String.valueOf(id);
+    if(studentControl.studentIdExist(checkId)){
+        JOptionPane.showConfirmDialog(null, "Student alread exist");
+    }
+    else{
+            
+            JOptionPane.showConfirmDialog(null, "Student hasbeen added ");
     studentControl.addStudent(id, name, email, department , phoneNumber , address);
+            
+            }
     }//GEN-LAST:event_jButton1ActionPerformed
-
+ public static boolean isEmptyString(String check){
+     return (check.isEmpty());
+ }
     /**
      * @param args the command line arguments
      */

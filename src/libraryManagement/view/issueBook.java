@@ -30,7 +30,7 @@ public class issueBook extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Bookid = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         issueButton = new javax.swing.JButton();
         closeButton = new javax.swing.JButton();
@@ -41,7 +41,6 @@ public class issueBook extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(325, 125));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(700, 450));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -60,14 +59,14 @@ public class issueBook extends javax.swing.JFrame {
         jLabel4.setText("Due Date");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 261, -1, -1));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 204));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        Bookid.setBackground(new java.awt.Color(255, 255, 204));
+        Bookid.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Bookid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                BookidActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 112, 200, -1));
+        getContentPane().add(Bookid, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 112, 200, -1));
 
         jTextField2.setBackground(new java.awt.Color(255, 255, 204));
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -108,9 +107,9 @@ public class issueBook extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void BookidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookidActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_BookidActionPerformed
 
     private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
         setVisible(false);
@@ -120,11 +119,19 @@ public class issueBook extends javax.swing.JFrame {
     private void issueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_issueButtonActionPerformed
         // TODO add your handling code here:
         SimpleDateFormat dFormat = new SimpleDateFormat("dd-MM-yyyy");
-        int bookId = Integer.parseInt(jTextField1.getText());
+        int bookId = Integer.parseInt(Bookid.getText());
         int StudentId=Integer.parseInt(jTextField2.getText());
         String issueDate=dFormat.format(jDateChooser1.getDate());
         String dueDate=dFormat.format(jDateChooser2.getDate());
-        issueControl.addIssue( bookId, StudentId, issueDate, dueDate);
+        String checkBookId=String.valueOf(bookId);
+        String checkStudentId=String.valueOf(StudentId);
+        if(issueControl.acceptIssue(checkBookId, checkStudentId)){
+            JOptionPane.showMessageDialog(null, "Issue done");
+        
+        issueControl.addIssue( bookId, StudentId, issueDate, dueDate);}
+        else{
+                JOptionPane.showMessageDialog(null, "Book/student id doesn't exist ");
+                }
 
     }//GEN-LAST:event_issueButtonActionPerformed
 
@@ -165,6 +172,7 @@ public class issueBook extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Bookid;
     private javax.swing.JButton closeButton;
     private javax.swing.JButton issueButton;
     private com.toedter.calendar.JDateChooser jDateChooser1;
@@ -174,7 +182,6 @@ public class issueBook extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,5 +1,5 @@
+
 package libraryManagement.view;
-import controller.bookControl;
 import controller.issueControl;
 import java.util.ArrayList;
     import javax.swing.JFrame;
@@ -7,7 +7,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import utility.database;
  
-public class availableBook {
+public class issueTable {
 
  
 
@@ -17,10 +17,10 @@ public class availableBook {
     JTable j;
  
     // Constructor
-    availableBook()
+    issueTable()
     {
         
-
+        if(!issueControl.isEmptyTable()){
         f = new JFrame();
  
         // Frame Title
@@ -29,19 +29,19 @@ public class availableBook {
         // Data to be displayed in the JTable
         
         
-        ArrayList<String []> bookTable=  bookControl.showAvailableBooksTable();
-        String bookdata[][]=new String[bookTable.size()][bookTable.get(0).length];
-        for (int i = 0; i < bookTable.size(); i++) {
-            String [] temp=bookTable.get(i);
-            for (int k = 0; k < bookTable.get(0).length; k++) {
-                bookdata[i][k]=temp[k];
+        ArrayList<String []> issueData=   issueControl.showIssuesTable();
+        String data[][]=new String[issueData.size()][issueData.get(0).length];
+        for (int i = 0; i < issueData.size(); i++) {
+            String [] temp=issueData.get(i);
+            for (int k = 0; k < issueData.get(0).length; k++) {
+                data[i][k]=temp[k];
             }
         }
      
-        String[] columnNames = { "Book id", "Book Name", "Publisher" ,"Publish Year","price"};
+        String[] columnNames = { "Book id", "Student Id", "issue Date" ,"Due Date","Status","Return Date"};
  
        //  Initializing the JTable;
-        j = new JTable(bookdata,columnNames);
+        j = new JTable(data,columnNames);
         j.setBounds(30, 40, 200, 300);
  
         // adding it to JScrollPane
@@ -51,11 +51,12 @@ public class availableBook {
         f.setSize(500, 200);
        //  Frame Visible = true
         f.setVisible(true);
-    }
+    }}
  
     // Driver  method
     public static void main(String[] args)
     {
-        new availableBook();
+        new issueTable();
     }
 }
+

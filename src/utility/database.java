@@ -21,7 +21,7 @@ import model.Student;
  * @author ezz
  */
 public class database {
-    static String url =  "jdbc:sqlserver://DESKTOP-3S7Q7L2\\SQLEXPRESS:1433;databaseName=libraryManagement;integratedSecurity=true;" +
+    static String url =  "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=libraryManagement;integratedSecurity=true;" +
      "encrypt=true;trustServerCertificate=true"; ;
   public static String addModel(String addQuery , String ...args) throws SQLException {
             try {
@@ -38,12 +38,15 @@ public class database {
      
         return   "Model added succesfully";
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+            
             return "Error in adding the Model";
         }
+            catch (SQLException ex ) {
+                return "Error";
+            }
   }
   
-    public static ArrayList<String> getModel(String getQuery  ,String columnWanted) throws SQLException {
+    public static ArrayList<String> getModel(String getQuery ) throws SQLException {
             ArrayList <String> arr=new ArrayList();
         try {
         
@@ -66,7 +69,7 @@ public class database {
    }
              
         catch (ClassNotFoundException ex) {
-            Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+            
  return arr;
             }
   }
@@ -80,7 +83,7 @@ public class database {
      
         return   "Model Updated succesfully";
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+            
             return "Error in Updating the Model";
         }
     }
@@ -93,11 +96,51 @@ public class database {
             r.next(); 
         return     r.getString("userRole"); 
         } catch (SQLException ex) {
-            Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+            
             return "error";
         }
         }
-  }
+        public static ArrayList<String[ ]> getTableInfo(String getQuery){
+            
+             ArrayList<String[ ] > tableInfo = new ArrayList<String[ ]>();
+            try {
+        
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Connection c      = DriverManager.getConnection(url);
+            Statement ss = c.createStatement();
+            String query =getQuery;
+            ResultSet r = ss.executeQuery(query);
+            ResultSetMetaData rsmd = r.getMetaData();
+        int columnsNumber = rsmd.getColumnCount();
+        int currentRow=0;
+        
+            while   (r.next()) {
+                
+                
+                String[] recordData=new String[columnsNumber];
+            for (int i = 1; i <= columnsNumber; i++) {  
+                
+                
+                recordData[i-1]=r.getString(i);
+                if(i==6)
+                    break;
+            }
+            tableInfo.add(recordData);
+            currentRow++;
+                
+            }
+             return    tableInfo ;
+
+   }
+             
+        catch (ClassNotFoundException ex) {
+            
+ return tableInfo;
+        }
+            catch(SQLException ex){
+                return tableInfo;
+            }
+  }}
 
 
     

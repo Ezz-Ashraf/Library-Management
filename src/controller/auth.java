@@ -20,25 +20,18 @@ public class auth {
      
      String role =database.getRole(username,password);
      System.out.println(role);
-     if (!role.equals("error"))
+     if (!role.equalsIgnoreCase("error"))
      {
-         if(role.equals("Admin"))
+         if(role.equalsIgnoreCase("Admin"))
          {
          User admin = new Admin() ;
          String [] userData = {username,password};
            ArrayList <String> adminData=admin.retrieveData(userData);
-       /*  for (int i = 0; i < adminData.size(); i++) {
-             System.out.println(adminData.get(i));
-         }*/
+         
          admin.setUserName(adminData.get(1));
          admin.setPassword(adminData.get(2));
          admin.setEmail(adminData.get(3));
          admin.setRole(adminData.get(4));
-         //id
-         //username
-         //password
-         //email
-         //role
          admin.startPage();
          }
          else

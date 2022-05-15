@@ -130,7 +130,7 @@ public class issueBook extends javax.swing.JFrame {
         
         issueControl.addIssue( bookId, StudentId, issueDate, dueDate);}
         else{
-                JOptionPane.showMessageDialog(null, "Book/student id doesn't exist ");
+                JOptionPane.showMessageDialog(null, "Failed to issue the book ");
                 }
 
     }//GEN-LAST:event_issueButtonActionPerformed

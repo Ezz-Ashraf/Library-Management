@@ -29,7 +29,7 @@ public class availableBook {
         // Data to be displayed in the JTable
         
         
-        ArrayList<String []> bookTable=  bookControl.showAvailableBooksTable();
+        ArrayList<String []> bookTable=  bookControl.availableBooksTable();
         String bookdata[][]=new String[bookTable.size()][bookTable.get(0).length];
         for (int i = 0; i < bookTable.size(); i++) {
             String [] temp=bookTable.get(i);

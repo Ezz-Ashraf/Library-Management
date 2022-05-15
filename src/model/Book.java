@@ -84,7 +84,7 @@ public class Book implements dataProcessing {
   try {
             int idIndex=0;
             String query="select * from Book where BookID ="+Integer.parseInt(condition[idIndex]);
-            studentData=database.getModel(query);
+            studentData=database.getRecord(query);
             return studentData ;
         } catch (SQLException ex) {
             studentData.add("not found");

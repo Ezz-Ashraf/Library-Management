@@ -96,7 +96,7 @@ public class Issue implements dataProcessing {
             int bookIdIndex=0;
             int statusIndex=1;
             String query="select * from Issue where BookId ='"+Integer.parseInt(selectors[bookIdIndex])+"'and Status ='"+selectors[statusIndex]+"'";
-            studentData=database.getModel(query);
+            studentData=database.getRecord(query);
             return studentData ;
         } catch (SQLException ex) {
             studentData.add("not found");

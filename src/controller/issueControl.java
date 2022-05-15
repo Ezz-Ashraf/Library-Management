@@ -9,7 +9,7 @@ import model.Issue;
 
 /**
  *
- * @author ezz
+ * @author omark
  */
 public class issueControl {
         public static boolean addIssue(int bookId, int studentId , String issueDate , String dueDate )
@@ -50,8 +50,9 @@ public class issueControl {
             int issueStatusIndex=3;
             String [] issueAttributes = {bookId,"issued"};
             ArrayList <String> issueData=checkIssue.retrieveData(issueAttributes);
-            if(issueData.get(bookIdIndex).equalsIgnoreCase("not found")){
-                System.out.println("aywa");
+            System.out.println(issueData.get(bookIdIndex));
+            if(!issueData.get(bookIdIndex).equalsIgnoreCase(bookId)){
+                
                 return false;
             }
             checkIssue.addBookId(Integer.parseInt(issueData.get(bookIdIndex)));
@@ -66,13 +67,13 @@ public class issueControl {
      
             
         }
-        public static ArrayList<String[]> showIssuesTable(){
+        public static ArrayList<String[]> issuesTable(){
             Issue data=new Issue();
             ArrayList<String[]> issuesData=data.getIssuesTable();
             return issuesData;
         }
         public static boolean isEmptyTable(){
-    ArrayList<String[]> issuesData=showIssuesTable();
+    ArrayList<String[]> issuesData=issuesTable();
     if(issuesData.size()==0){
         return true;
     }

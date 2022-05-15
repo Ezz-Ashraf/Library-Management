@@ -17,7 +17,7 @@ import utility.database;
  *
  * @author omark
  */
-public class Student extends User implements dataProcessing {
+public class Student extends User  {
     private String name;
     private int id;
     private String email;
@@ -41,7 +41,7 @@ public class Student extends User implements dataProcessing {
   try {
             int idIndex=0;
             String query="select * from Student where StudentID ="+Integer.parseInt(condition[idIndex]);
-            studentData=database.getModel(query);
+            studentData=database.getRecord(query);
             return studentData ;
         } catch (SQLException ex) {
             studentData.add("not found");
@@ -108,9 +108,6 @@ public class Student extends User implements dataProcessing {
     @Override
     public void saveData()
     {
-     /*String query=" insert into Student (StudentName, StudentID, email, StudentDepartment,StudentPhone ,StudentAddress) "
-              + "values('"+"hgjg"+"', '"+4444+"', '"+"yjyjhgk"+"', '"+"CS"+"' , '"+"010"+" , "+"Helwan"+"')";
-     */
       String  query = "INSERT INTO Student" +
             " (StudentName,StudentID,email,StudentDepartment,StudentPhone,StudentAddress)" +
             " VALUES (?,?,?,?,?,?)";

@@ -46,7 +46,7 @@ public class database {
             }
   }
   
-    public static ArrayList<String> getModel(String getQuery ) throws SQLException {
+    public static ArrayList<String> getRecord(String getQuery ) throws SQLException {
             ArrayList <String> arr=new ArrayList();
         try {
         

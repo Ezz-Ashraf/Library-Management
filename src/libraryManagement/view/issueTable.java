@@ -29,7 +29,7 @@ public class issueTable {
         // Data to be displayed in the JTable
         
         
-        ArrayList<String []> issueData=   issueControl.showIssuesTable();
+        ArrayList<String []> issueData=   issueControl.issuesTable();
         String data[][]=new String[issueData.size()][issueData.get(0).length];
         for (int i = 0; i < issueData.size(); i++) {
             String [] temp=issueData.get(i);

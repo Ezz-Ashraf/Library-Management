@@ -4,10 +4,11 @@
  */
 package controller;
 import model.Student;
+import java.util.*;
 
 /**
  *
- * @author ezz
+ * @author omark
  */
 public class studentControl {
 
@@ -24,7 +25,4 @@ public class studentControl {
         System.out.println(studentId);
         return (studentId.equals(id));
     }
-   /* public static boolean searchStudent(int studentId){
-        
-    }*/
 }

@@ -37,12 +37,11 @@ public class Student extends User  {
     public Student()
     {
     }
-     /*   @Override
-    public ArrayList<String> retrieveData(String... condition) {
- ArrayList <String> studentData=new ArrayList();
+public ArrayList<String> getStudentRecord(String... condition) {
+ArrayList <String> studentData=new ArrayList();
   try {
             int idIndex=0;
-            String query="select * from Student where StudentName ="+condition[0]+" and Spassword = "+condition[1];
+            String query="select * from Student where StudentID ="+Integer.parseInt(condition[idIndex]);
             studentData=database.getRecord(query);
             return studentData ;
         } catch (SQLException ex) {
@@ -50,7 +49,7 @@ public class Student extends User  {
             return studentData;
         }
         
-    }*/
+    }
     public static class studentBuilder
     {
     private String name;

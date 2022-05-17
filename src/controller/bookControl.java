@@ -5,10 +5,11 @@
 package controller;
 
 import model.Book;
+import java.util.*;
 
 /**
  *
- * @author ezz
+ * @author omark
  */
 public class bookControl {
       public static boolean addBook(int bookId, float bookPrice ,String bookName, String publisher , String publishYear)
@@ -23,4 +24,26 @@ public class bookControl {
        addedBook.saveData();
     return true;
     }
+      public static boolean bookExist(String id){
+        Book checkId=new Book();
+        int indexOfIdColumn=0;
+        String BookId=(checkId.retrieveData(id)).get(indexOfIdColumn);
+     
+        return (BookId.equals(id));
+    }
+      public static ArrayList<String[]> availableBooksTable(){
+            Book data=new Book();
+            ArrayList<String[]> bookstable=data.getBookTable();
+            filterAvailableBooksTable(bookstable);
+            return bookstable;
+        }
+      private static void filterAvailableBooksTable(ArrayList<String[]> booksTable){
+          int indexOfIdColumn=0;
+          for (int i = 0; i <booksTable.size(); i++) {
+             String bookId= booksTable.get(i)[indexOfIdColumn];
+              if((issueControl.isissued(bookId))){
+                  booksTable.remove(i);
+              }
+          }
+      }
 }

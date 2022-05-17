@@ -90,8 +90,24 @@ public class Issue implements dataProcessing {
 
     @Override
     public ArrayList<String> retrieveData(String ... selectors) {
-         ArrayList <String> gotData=new ArrayList();
-       return gotData;
+         
+      ArrayList <String> studentData=new ArrayList();
+  try {
+            int bookIdIndex=0;
+            int statusIndex=1;
+            String query="select * from Issue where BookId ='"+Integer.parseInt(selectors[bookIdIndex])+"'and Status ='"+selectors[statusIndex]+"'";
+            studentData=database.getRecord(query);
+            return studentData ;
+        } catch (SQLException ex) {
+            studentData.add("not found");
+            return studentData;
+        }
+        
+    }
+    public ArrayList<String[]> getIssuesTable(){
+        ArrayList<String[]> issueData = database.getTableInfo("select * from Issue");
+        return issueData;
     }
     }
+    
 

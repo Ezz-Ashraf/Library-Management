@@ -6,6 +6,7 @@
 package libraryManagement.view;
 
 import controller.bookControl;
+import javax.swing.JOptionPane;
 import model.Book;
 
 /**
@@ -135,6 +136,13 @@ public class newBook extends javax.swing.JFrame {
        String publisher = jTextField3.getText();
         float price = Float.parseFloat(jTextField4.getText());
        String publishYear = jTextField5.getText();
+       String checkId=String.valueOf(bookId);
+       if(bookControl.bookExist(checkId)){
+        JOptionPane.showConfirmDialog(null, "Book alread exist");
+    }
+    else{
+            
+            JOptionPane.showConfirmDialog(null, "Book hasbeen added ");}
        bookControl.addBook(bookId, price, bookName, publisher, publishYear);
     }//GEN-LAST:event_jButton1ActionPerformed
 

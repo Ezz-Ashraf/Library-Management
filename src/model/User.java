@@ -21,17 +21,17 @@ public abstract class User implements dataProcessing {
     String role;
     public void setUserName(String userName)
     {
-    this.username=username;
+    this.username=userName;
     }
-    public void setPassword(String userName)
+    public void setPassword(String password)
     {
     this.password=password;
     }
-    public void setEmail(String userName)
+    public void setEmail(String email)
     {
     this.email=email;
     }
-    public void setRole(String userName)
+    public void setRole(String role)
     {
     this.role=role;
     }
@@ -45,7 +45,7 @@ public abstract class User implements dataProcessing {
            
         String  query = "SELECT * FROM Users where userName = '"+userData[0]+"' and Upassword ='"+ userData[1]+"'";
      try {   
-         ArrayList <String> gotData  =database.getModel(query,"role");
+         ArrayList <String> gotData  =database.getRecord(query);
          System.out.println("Hi");
 
          return gotData;

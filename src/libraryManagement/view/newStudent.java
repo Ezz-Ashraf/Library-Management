@@ -6,6 +6,7 @@
 package libraryManagement.view;
 
 import controller.studentControl;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,6 +44,8 @@ public class newStudent extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,11 +55,11 @@ public class newStudent extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Student ID");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Student Name");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Student Email");
@@ -73,11 +76,11 @@ public class newStudent extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 200, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 200, -1));
 
         jTextField2.setBackground(new java.awt.Color(204, 255, 204));
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 200, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 200, -1));
 
         jTextField3.setBackground(new java.awt.Color(204, 255, 204));
         jTextField3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -118,6 +121,19 @@ public class newStudent extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, -1, -1));
         getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 200, -1));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setText("Student Password");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
+
+        jTextField6.setBackground(new java.awt.Color(204, 255, 204));
+        jTextField6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 200, -1));
+
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/libraryManagement/view/Icons/123456.png"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -136,12 +152,34 @@ public class newStudent extends javax.swing.JFrame {
     int id = Integer.parseInt(jTextField1.getText());
     String name = jTextField2.getText();
     String email = jTextField3.getText();
+    String password = jTextField6.getText();
     String department = jComboBox1.getSelectedItem().toString();
-    String phoneNumber = jTextField4.getText();
-    String address = jTextField5.getText();
-    studentControl.addStudent(id, name, email, department , phoneNumber , address);
+    String phoneNumber = null;
+    String address=null;
+    if(!isEmptyString(jTextField5.getText())){
+        address=jTextField5.getText();
+    }
+  if(!isEmptyString(jTextField4.getText())){
+      phoneNumber=jTextField4.getText();
+  }
+    String checkId=String.valueOf(id);
+    if(studentControl.studentIdExist(checkId)){
+        JOptionPane.showConfirmDialog(null, "Student alread exist");
+    }
+    else{
+            
+            JOptionPane.showConfirmDialog(null, "Student hasbeen added ");
+    studentControl.addStudent(id, name, password,email, department , phoneNumber , address);
+            
+            }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+ public static boolean isEmptyString(String check){
+     return (check.isEmpty());
+ }
     /**
      * @param args the command line arguments
      */
@@ -187,11 +225,13 @@ public class newStudent extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,8 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import libraryManagement.view.home;
-import libraryManagement.view.statistics;
+import libraryManagement.view.adminHome;
 import libraryManagement.view.studentHome;
 import utility.database;
 
@@ -18,10 +17,11 @@ import utility.database;
  *
  * @author omark
  */
-public class Student extends User implements dataProcessing {
+public class Student extends User  {
     private String name;
     private int id;
-    private String email;
+    private String Semail;
+    private String Spassword;
     private String department;
     private String phoneNumber;
     private String address;
@@ -29,31 +29,43 @@ public class Student extends User implements dataProcessing {
         this.department=builder.department;
         this.name=builder.name;
         this.id=builder.id;
-        this.email=builder.email;
+        this.Spassword=builder.Spassword;
+        this.Semail=builder.Semail;
         this.phoneNumber=builder.phoneNumber;
         this.address=builder.address;
     }
     public Student()
     {
     }
-        @Override
-    public ArrayList<String> retrieveData(String... arr) {
- ArrayList <String> gotData=new ArrayList();
-       return gotData;
-    }
+     /*   @Override
+    public ArrayList<String> retrieveData(String... condition) {
+ ArrayList <String> studentData=new ArrayList();
+  try {
+            int idIndex=0;
+            String query="select * from Student where StudentName ="+condition[0]+" and Spassword = "+condition[1];
+            studentData=database.getRecord(query);
+            return studentData ;
+        } catch (SQLException ex) {
+            studentData.add("not found");
+            return studentData;
+        }
+        
+    }*/
     public static class studentBuilder
     {
     private String name;
     private int id;
-    private String email;
+    private String Semail;
+    private String Spassword;
     private String department;
     private String phoneNumber;
     private String address;
-    public studentBuilder(String name,int id , String email ,String department)
+    public studentBuilder(String name,String password,int id , String email ,String department)
     {
         this.name=name;
+        this.Spassword= password;
         this.id=id;
-        this.email=email;
+        this.Semail=email;
         this.department=department;
     }
 
@@ -76,13 +88,17 @@ public class Student extends User implements dataProcessing {
     {
     return this.name;
     }
+    public String getPassword()
+    {
+    return this.Spassword;
+    }
     public int getId()
     {
     return this.id;
     }
     public String getEmail()
     {
-    return this.email;
+    return this.Semail;
     }
     public String getDeparment()
     {
@@ -100,18 +116,20 @@ public class Student extends User implements dataProcessing {
     @Override
     public void saveData()
     {
-     /*String query=" insert into Student (StudentName, StudentID, email, StudentDepartment,StudentPhone ,StudentAddress) "
-              + "values('"+"hgjg"+"', '"+4444+"', '"+"yjyjhgk"+"', '"+"CS"+"' , '"+"010"+" , "+"Helwan"+"')";
-     */
-      String  query = "INSERT INTO Student" +
-            " (StudentName,StudentID,email,StudentDepartment,StudentPhone,StudentAddress)" +
-            " VALUES (?,?,?,?,?,?)";
-      String args[]={getName(),getId()+"",getEmail(),getDeparment(),getPhoneNumber(),getAddress()};
+      String  studentTableQuery = "INSERT INTO Student" +
+            " (StudentName,StudentID,email,StudentDepartment,Spassword,StudentPhone,StudentAddress)" +
+            " VALUES (?,?,?,?,?,?,?)";
+                 String  userTableQuery = "INSERT INTO Users" +
+            " (userName,Upassword,email,userRole)" +
+            " VALUES (?,?,?,?)";
+      String userTableArgs[]={getName(),getPassword(),getEmail(),"Student"};
+      String studentTableArgs[]={getName(),getId()+"",getEmail(),getDeparment(),getPassword(),getPhoneNumber(),getAddress()};
      try {
-            database.addModel(query,args);
+            database.addModel(studentTableQuery,studentTableArgs);
+               database.addModel(userTableQuery,userTableArgs);
         } catch (SQLException ex) {
             Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }     
     }
     
     @Override
@@ -119,4 +137,5 @@ public class Student extends User implements dataProcessing {
     {
     new studentHome().setVisible(true);
     }
+    
 }

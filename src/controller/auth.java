@@ -19,7 +19,7 @@ public class auth {
  {
      
      String role =database.getRole(username,password);
-     System.out.println(role);
+     
      if (!role.equalsIgnoreCase("error"))
      {
          if(role.equalsIgnoreCase("Admin"))

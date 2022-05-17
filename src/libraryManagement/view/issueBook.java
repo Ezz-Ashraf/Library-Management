@@ -31,11 +31,11 @@ public class issueBook extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         Bookid = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        StudentID = new javax.swing.JTextField();
         issueButton = new javax.swing.JButton();
         closeButton = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        IssueDateField = new com.toedter.calendar.JDateChooser();
+        DueDateField = new com.toedter.calendar.JDateChooser();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,9 +68,9 @@ public class issueBook extends javax.swing.JFrame {
         });
         getContentPane().add(Bookid, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 112, 200, -1));
 
-        jTextField2.setBackground(new java.awt.Color(255, 255, 204));
-        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 163, 200, -1));
+        StudentID.setBackground(new java.awt.Color(255, 255, 204));
+        StudentID.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(StudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 163, 200, -1));
 
         issueButton.setBackground(new java.awt.Color(255, 255, 204));
         issueButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -94,11 +94,11 @@ public class issueBook extends javax.swing.JFrame {
         });
         getContentPane().add(closeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(446, 364, -1, -1));
 
-        jDateChooser1.setBackground(new java.awt.Color(255, 255, 204));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 200, -1));
+        IssueDateField.setBackground(new java.awt.Color(255, 255, 204));
+        getContentPane().add(IssueDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 200, -1));
 
-        jDateChooser2.setBackground(new java.awt.Color(255, 255, 204));
-        getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 200, -1));
+        DueDateField.setBackground(new java.awt.Color(255, 255, 204));
+        getContentPane().add(DueDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 200, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/libraryManagement/view/Icons/123456.png"))); // NOI18N
         jLabel5.setText("jLabel5");
@@ -120,9 +120,9 @@ public class issueBook extends javax.swing.JFrame {
         // TODO add your handling code here:
         SimpleDateFormat dFormat = new SimpleDateFormat("dd-MM-yyyy");
         int bookId = Integer.parseInt(Bookid.getText());
-        int StudentId=Integer.parseInt(jTextField2.getText());
-        String issueDate=dFormat.format(jDateChooser1.getDate());
-        String dueDate=dFormat.format(jDateChooser2.getDate());
+        int StudentId=Integer.parseInt(StudentID.getText());
+        String issueDate=dFormat.format(IssueDateField.getDate());
+        String dueDate=dFormat.format(DueDateField.getDate());
         String checkBookId=String.valueOf(bookId);
         String checkStudentId=String.valueOf(StudentId);
         if(issueControl.acceptIssue(checkBookId, checkStudentId)){
@@ -173,15 +173,15 @@ public class issueBook extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Bookid;
+    private com.toedter.calendar.JDateChooser DueDateField;
+    private com.toedter.calendar.JDateChooser IssueDateField;
+    private javax.swing.JTextField StudentID;
     private javax.swing.JButton closeButton;
     private javax.swing.JButton issueButton;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

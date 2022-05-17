@@ -27,17 +27,17 @@ public class Student extends User  {
     private String address;
     private Student(studentBuilder builder){
         this.department=builder.department;
-        this.name=builder.name;
+        this.name=builder.name; 
         this.id=builder.id;
-        this.Spassword=builder.Spassword;
-        this.Semail=builder.Semail;
+        this.Spassword=builder.Spassword; 
+        this.Semail=builder.Semail; 
         this.phoneNumber=builder.phoneNumber;
         this.address=builder.address;
     }
     public Student()
     {
     }
-public ArrayList<String> getStudentRecord(String... condition) {
+    public ArrayList<String> getStudentRecord(String... condition) {
 ArrayList <String> studentData=new ArrayList();
   try {
             int idIndex=0;

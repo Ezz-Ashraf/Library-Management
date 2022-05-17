@@ -21,8 +21,7 @@ public class studentControl {
     public static boolean studentIdExist(String id){
         Student checkId=new Student();
         int indexOfIdColumn=0;
-        String studentId=(checkId.retrieveData(id)).get(indexOfIdColumn);
-        System.out.println(studentId);
+        String studentId=(checkId.getStudentRecord(id)).get(indexOfIdColumn);
         return (studentId.equals(id));
     }
 }

@@ -123,7 +123,7 @@ public class login extends javax.swing.JFrame {
     String username = jTextField1.getText();
     String password = jPasswordField1.getText();
     boolean check = auth.checkLogin(username, password);
-      System.out.println(check);
+      
     if(check) {
      setVisible(false);
    // new home().setVisible(true);

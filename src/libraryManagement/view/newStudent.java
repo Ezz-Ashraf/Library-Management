@@ -34,18 +34,18 @@ public class newStudent extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        IdField = new javax.swing.JTextField();
+        NameField = new javax.swing.JTextField();
+        EmailField = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        PhoneNumberField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        AddressField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        PasswordField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,22 +69,22 @@ public class newStudent extends javax.swing.JFrame {
         jLabel4.setText("Student Department");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
 
-        jTextField1.setBackground(new java.awt.Color(204, 255, 204));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        IdField.setBackground(new java.awt.Color(204, 255, 204));
+        IdField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        IdField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                IdFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 200, -1));
+        getContentPane().add(IdField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 200, -1));
 
-        jTextField2.setBackground(new java.awt.Color(204, 255, 204));
-        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 200, -1));
+        NameField.setBackground(new java.awt.Color(204, 255, 204));
+        NameField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(NameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 200, -1));
 
-        jTextField3.setBackground(new java.awt.Color(204, 255, 204));
-        jTextField3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 200, -1));
+        EmailField.setBackground(new java.awt.Color(204, 255, 204));
+        EmailField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(EmailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 200, -1));
 
         jComboBox1.setBackground(new java.awt.Color(204, 204, 255));
         jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -114,25 +114,25 @@ public class newStudent extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Student Number (Optional)");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 200, -1));
+        getContentPane().add(PhoneNumberField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 200, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Student Address (Optional)");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, -1, -1));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 200, -1));
+        getContentPane().add(AddressField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 200, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setText("Student Password");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
 
-        jTextField6.setBackground(new java.awt.Color(204, 255, 204));
-        jTextField6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        PasswordField.setBackground(new java.awt.Color(204, 255, 204));
+        PasswordField.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        PasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                PasswordFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 200, -1));
+        getContentPane().add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 200, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/libraryManagement/view/Icons/123456.png"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -144,39 +144,39 @@ public class newStudent extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void IdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_IdFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    int id = Integer.parseInt(jTextField1.getText());
-    String name = jTextField2.getText();
-    String email = jTextField3.getText();
-    String password = jTextField6.getText();
+    int id = Integer.parseInt(IdField.getText());
+    String name = NameField.getText();
+    String email = EmailField.getText();
+    String password = PasswordField.getText();
     String department = jComboBox1.getSelectedItem().toString();
     String phoneNumber = null;
     String address=null;
-    if(!isEmptyString(jTextField5.getText())){
-        address=jTextField5.getText();
+    if(!isEmptyString(AddressField.getText())){
+        address=AddressField.getText();
     }
-  if(!isEmptyString(jTextField4.getText())){
-      phoneNumber=jTextField4.getText();
+  if(!isEmptyString(PhoneNumberField.getText())){
+      phoneNumber=PhoneNumberField.getText();
   }
     String checkId=String.valueOf(id);
     if(studentControl.studentIdExist(checkId)){
-        JOptionPane.showConfirmDialog(null, "Student alread exist");
+        JOptionPane.showMessageDialog(null, "Student Already Exist");
     }
     else{
             
-            JOptionPane.showConfirmDialog(null, "Student hasbeen added ");
+            JOptionPane.showMessageDialog(null, "Student hasbeen added");
     studentControl.addStudent(id, name, password,email, department , phoneNumber , address);
             
             }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_PasswordFieldActionPerformed
  public static boolean isEmptyString(String check){
      return (check.isEmpty());
  }
@@ -216,6 +216,12 @@ public class newStudent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AddressField;
+    private javax.swing.JTextField EmailField;
+    private javax.swing.JTextField IdField;
+    private javax.swing.JTextField NameField;
+    private javax.swing.JTextField PasswordField;
+    private javax.swing.JTextField PhoneNumberField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -227,11 +233,5 @@ public class newStudent extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

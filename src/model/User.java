@@ -46,7 +46,7 @@ public abstract class User implements dataProcessing {
         String  query = "SELECT * FROM Users where userName = '"+userData[0]+"' and Upassword ='"+ userData[1]+"'";
      try {   
          ArrayList <String> gotData  =database.getRecord(query);
-         System.out.println("Hi");
+         
 
          return gotData;
         } catch (SQLException ex) {

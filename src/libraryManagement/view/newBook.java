@@ -36,11 +36,11 @@ public class newBook extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        BookIDField = new javax.swing.JTextField();
+        BookNameField = new javax.swing.JTextField();
+        PublisherNameField = new javax.swing.JTextField();
+        PriceField = new javax.swing.JTextField();
+        PublishYearField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -50,55 +50,60 @@ public class newBook extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 0, 255));
         jLabel1.setText("Book ID");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 96, -1, -1));
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 0, 255));
         jLabel2.setText("Book Name");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 150, -1, -1));
 
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 0, 255));
         jLabel3.setText("Publisher");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 206, -1, -1));
 
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 0, 255));
         jLabel4.setText("Price");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 256, -1, -1));
 
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 0, 255));
         jLabel5.setText("Publish year");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 307, -1, -1));
 
-        jTextField1.setBackground(new java.awt.Color(204, 255, 0));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        BookIDField.setBackground(new java.awt.Color(153, 153, 153));
+        BookIDField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        BookIDField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                BookIDFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 93, 200, -1));
+        getContentPane().add(BookIDField, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 93, 200, -1));
 
-        jTextField2.setBackground(new java.awt.Color(204, 255, 0));
-        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 147, 200, -1));
+        BookNameField.setBackground(new java.awt.Color(153, 153, 153));
+        BookNameField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(BookNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 147, 200, -1));
 
-        jTextField3.setBackground(new java.awt.Color(204, 255, 0));
-        jTextField3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 203, 200, -1));
+        PublisherNameField.setBackground(new java.awt.Color(153, 153, 153));
+        PublisherNameField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(PublisherNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 203, 200, -1));
 
-        jTextField4.setBackground(new java.awt.Color(204, 255, 0));
-        jTextField4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 253, 200, -1));
+        PriceField.setBackground(new java.awt.Color(153, 153, 153));
+        PriceField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(PriceField, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 253, 200, -1));
 
-        jTextField5.setBackground(new java.awt.Color(204, 255, 0));
-        jTextField5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 304, 200, -1));
+        PublishYearField.setBackground(new java.awt.Color(153, 153, 153));
+        PublishYearField.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(PublishYearField, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 304, 200, -1));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/libraryManagement/view/Icons/save-icon--1.png"))); // NOI18N
@@ -120,29 +125,30 @@ public class newBook extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, -1, -1));
 
+        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/libraryManagement/view/Icons/123456.png"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void BookIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookIDFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_BookIDFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       int bookId = Integer.parseInt(jTextField1.getText());
-       String bookName = jTextField2.getText();
-       String publisher = jTextField3.getText();
-        float price = Float.parseFloat(jTextField4.getText());
-       String publishYear = jTextField5.getText();
+       int bookId = Integer.parseInt(BookIDField.getText());
+       String bookName = BookNameField.getText();
+       String publisher = PublisherNameField.getText();
+        float price = Float.parseFloat(PriceField.getText());
+       String publishYear = PublishYearField.getText();
        String checkId=String.valueOf(bookId);
        if(bookControl.bookExist(checkId)){
-        JOptionPane.showConfirmDialog(null, "Book alread exist");
+       JOptionPane.showMessageDialog(null, "Book Already Exist");
     }
     else{
             
-            JOptionPane.showConfirmDialog(null, "Book hasbeen added ");}
+            JOptionPane.showMessageDialog(null, "Book hasbeen added");}
        bookControl.addBook(bookId, price, bookName, publisher, publishYear);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -186,6 +192,11 @@ public class newBook extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField BookIDField;
+    private javax.swing.JTextField BookNameField;
+    private javax.swing.JTextField PriceField;
+    private javax.swing.JTextField PublishYearField;
+    private javax.swing.JTextField PublisherNameField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -194,10 +205,5 @@ public class newBook extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

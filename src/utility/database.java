@@ -21,7 +21,7 @@ import model.Student;
  * @author ezz
  */
 public class database {
-    static String url =  "jdbc:sqlserver://DESKTOP-3S7Q7L2\\SQLEXPRESS:1433;databaseName=libraryManagement;integratedSecurity=true;" +
+    static String url =  "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=libraryManagement;integratedSecurity=true;" +
      "encrypt=true;trustServerCertificate=true"; ;
   public static String addModel(String addQuery , String ...args) throws SQLException {
             try {
@@ -57,7 +57,7 @@ public class database {
             ResultSet r = ss.executeQuery(query);
             ResultSetMetaData rsmd = r.getMetaData();
         int columnsNumber = rsmd.getColumnCount();
-            System.out.println(columnsNumber);
+            
                     r.next(); 
             for (int i = 1; i <= columnsNumber; i++) {                 
                 arr.add(r.getString(i));
